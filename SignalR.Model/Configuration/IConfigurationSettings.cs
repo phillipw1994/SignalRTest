@@ -12,6 +12,7 @@ namespace SignalR.Model.Configuration
         string LocationsToBePicked { get; }
         string ClientId { get; }
         string ClientSecret { get; }
+        string DeviceHub { get; }
 
         string ConnectionString(string connectionStringName);
     }

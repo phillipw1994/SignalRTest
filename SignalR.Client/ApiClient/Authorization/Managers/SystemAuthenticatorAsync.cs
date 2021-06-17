@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using SignalR.Client.ApiClient.Authorization.Interfaces;
 using SignalR.Model.Authorization;
+using SignalR.Model.Configuration;
 using SignalR.Model.Exceptions;
 using SignalR.Model.Interfaces.AuthorizationApi;
 
@@ -17,9 +18,9 @@ namespace SignalR.Client.ApiClient.Authorization.Managers
     {
         private IConnectionInfo ConnectionInfo { get; }
 
-        public SystemAuthenticatorAsync(IConnectionInfo connectionInfo)
+        public SystemAuthenticatorAsync(IConfigurationSettings configurationSettings)
         {
-            ConnectionInfo = connectionInfo;
+            ConnectionInfo = configurationSettings.ConnectionInfo;
         }
 
         public async Task<IEnumerable<ISystemResponse>> GetSystemsAsync(IApiCredentials apiCredentials)

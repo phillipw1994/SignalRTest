@@ -23,6 +23,7 @@ namespace SignalR.Model.Configuration
         private string _locationsToBePicked;
         private string _clientId;
         private string _clientSecret;
+        private string _deviceHub;
         #endregion
 
         public BaseConnectionInfo ConnectionInfo => _connectionInfo ??= Configuration.GetSection("ConnectionInfo").Get<BaseConnectionInfo>();
@@ -33,6 +34,7 @@ namespace SignalR.Model.Configuration
         public string LocationsToBePicked => _locationsToBePicked ??= Configuration.GetSection("LocationsToBePicked").Get<string>();
         public string ClientId => _clientId ??= Configuration.GetSection("ClientId").Get<string>();
         public string ClientSecret => _clientSecret ??= Configuration.GetSection("ClientSecret").Get<string>();
+        public string DeviceHub => _deviceHub ??= Configuration.GetSection("DeviceHub").Get<string>();
 
         public string ConnectionString(string connectionStringName)
         {

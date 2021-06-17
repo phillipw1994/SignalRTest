@@ -17,11 +17,11 @@ namespace SignalR.Client.Core.Management
     {
         #region constructors
 
-        public ClientCredentialManagerAsync(ISystemAuthenticatorAsync authenticator, IConfigurationSettings configurationSettings, string connectionString, string settingsPath)
+        public ClientCredentialManagerAsync(ISystemAuthenticatorAsync authenticator, IConfigurationSettings configurationSettings)
         {
             Authenticator = authenticator;
             ConfigurationSettings = configurationSettings;
-            ClientCredentialRepository = new LocalDbClientCredentialRepository<T>(connectionString);
+            ClientCredentialRepository = new LocalDbClientCredentialRepository<T>(configurationSettings.ConnectionString("DefaultConnection"));
         }
 
         #endregion

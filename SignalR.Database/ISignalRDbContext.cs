@@ -29,7 +29,6 @@ namespace SignalR.Database
         #region Public Methods
 
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
-        DbQuery<TQuery> Query<TQuery>() where TQuery : class;
         int SaveChanges();
         int SaveChanges(bool acceptAllChangesOnSuccess);
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);

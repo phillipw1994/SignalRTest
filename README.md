@@ -9,9 +9,9 @@ This app features:
 
 ## SignalR.Client
 - Client can be run on a Raspberry Pi as worker service and console app
-
+- Client uses Autofac as it is a Worker Service and does not support dependency injection out of the box
 ### LCD
-* LCD can print any message sent to it using the POST endpoint api/raspberrypi/lcd
+* LCD can print any message sent to it using the Api POST endpoint api/raspberrypi/lcd
 * Many manufacturers sell 20x4 LCD character displays with an integrated GPIO expander. The character display connects directly to the GPIO expander, which then connects to the Raspberry Pi via the Inter-Integrated Circuit (I2C) serial protocol.
 * Use the raspi-config command to ensure the following two services are enabled: 
   * SSH
@@ -20,10 +20,10 @@ This app features:
 For more information on raspi-config visit https://www.raspberrypi.org/documentation/configuration/raspi-config.md
 
 ### LED
-* LED can be toggled on and off using the POST endpoint api/raspberrypi/led
+* LED can be toggled on and off using the Api POST endpoint api/raspberrypi/led
 
 ### DisplayCurrentTime
-* LCD can print any message sent to it using the POST endpoint api/raspberrypi/displaycurrenttime
+* LCD can print any message sent to it using the Api POST endpoint api/raspberrypi/displaycurrenttime
 
 ### ReceiveMessage
-* LCD can print any message sent to it using the POST endpoint api/raspberrypi
+* LCD can print any message sent to it using the Api POST endpoint api/raspberrypi
