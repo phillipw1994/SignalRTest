@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<UserSecretsId>dotnet-Race.Paws.Core.Api.SignalR.Client-6A5E56F6-4B57-4E35-A3AC-A06589347239</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Race.Paws.Core.Api.SignalR.Client.csproj.vspscc" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Iot.Device.Bindings" Version="1.4.0" />
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.6" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.14" />
+		<PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Core\Management\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\SignalR.Database\SignalR.Database.csproj" />
+	  <ProjectReference Include="..\SignalR.Model\SignalR.Model.csproj" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Race.Paws.Core.Api.SignalR.Client": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": "true"
+    },
+    "Docker": {
+      "commandName": "Project"
+    }
+  }
+}
