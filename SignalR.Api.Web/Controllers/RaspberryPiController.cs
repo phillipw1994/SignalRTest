@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
+using SignalR.Api.Model;
 using SignalR.Api.Web.Hubs;
 
 namespace SignalR.Api.Web.Controllers
@@ -35,10 +36,17 @@ namespace SignalR.Api.Web.Controllers
         }
 
         [HttpPost("lcd")]
-        public async Task<IActionResult> PostLcdMessage(string message)
+        public async Task<IActionResult> PostLcdMessage(LcdMessage lcdMessage)
         {
-            await HubContext.Clients.Group("Devices").SendAsync("LcdMessage", message);
-            return Ok();
+            await HubContext.Clients.Group("Devices").SendAsync("LcdMessage", lcdMessage.Message);
+            return Ok(lcdMessage);
+        }
+
+        [HttpPost("consolemessage")]
+        public async Task<IActionResult> PostConsoleMessage(ConsoleMessage consoleMessage)
+        {
+            await HubContext.Clients.Group("Devices").SendAsync("consoleMessage", consoleMessage.Message);
+            return Ok(consoleMessage);
         }
 
         [HttpPost("displaycurrenttime")]

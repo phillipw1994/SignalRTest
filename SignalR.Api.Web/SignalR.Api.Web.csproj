@@ -23,4 +23,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SignalRTest\SignalR.Api.Model\SignalR.Api.Model.csproj" />
+  </ItemGroup>
+
 </Project>
